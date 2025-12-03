@@ -1,0 +1,16 @@
+---
+title: "Longitudinal Alpha Beta"
+format: docx
+---
+
+David Rach1, Nginache Nampota3, Godfrey Mvula3, Winter Okoth, Daniela Franco,  Felix A. Mkandawire3, Osward M. Nyirenda3, Franklin R. Toapanta4, Marcelo B. Sztein4, Miriam Laufer4, Kirsten E. Lyke4, Cristiana Cairo2
+
+Spectral flow cytometry (SFC) holds enormous potential to profile the immune system at a breadth and a depth previously untennable. For researchers working with neonatal samples, with limited number of cord and peripheral blood mononuclear cells, this new approach is particular promising in dissecting the heterogeneity of observed immune responses in response to immunization or infection, especially during the early life period. 
+
+This increased capacity to characterize heterogeneity comes for the modern cytometrist comes at the cost of needing to handle increased uncertainty, primarily arising from how marker abundance is estimated during unmixing. Whether from additional or varied autofluorescences, fluororophore tandem degradation or non-specific binding, or co-expression of markers on rare subsets locally increasing unmixing-dependent spread, the uncertainty will shape your data.  As we leverage SFC increased breadth and depth, how do we know what we observe is heterogeneity in immune response, or a technical artefact. 
+
+Beyond resolution, there remains the question of scale. When going beyond gating handful of pre-determined cell populations, how evaluate totality of our acquired data? remains a challenge. Beyond dimensionality visualization and unsupervised clustering, how balance curse of dimensionality while balanccing differential to effectuate an analysis greate sum of its parts. 
+
+We highlight and present our work (and the decisions and tradeoffs) characterizing a cohort of Malawian HIV-exposed Uninfected (HEU) infants. These were analyzed with a 29 and 32-color SFC panel for Innate and Alpha Beta T cells. Samples consisted of cryopreserved CBMC, as well as PBMCs from 4 and 9 month blood draws. The majority processed cells were longitudinal for each individual. These cells were thawed, rested for 6 hours, and incubated for 11 hours in the presence of either purified protein derrivative (PPD) or SEB.  Cells were acquired on a 5-laser Cytek Aurora following instrument QC. 
+
+Following acquisition, unmixing and analysis were conducted in R and Rust. Leveraging a semi-supervised approach, we exhaustively characterized the samples, enabling identifation of quality control failures that might have otherwise been misinterpreted as biology but for our approach. 
