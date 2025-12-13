@@ -1,31 +1,36 @@
 ---
-title: "Longitudinal Alpha Beta"
 format: docx
 ---
 
-David Rach, 
+A semi-supervised pipeline for a comprehensive and scalable analysis of immune heterogeneity in human samples
 
-Nginache Nampota, Godfrey Mvula, Felix A. Mkandawire, Osward M. Nyirenda,
+David Rach1,2, Nginache Nampota-Nkomba3,4, Godfrey Mvula3, Felix A. Mkandawire3, Osward M. Nyirenda3, Winter A. Okoth5,6, Daniela Franco4, Andrea G. Buchwald5, Franklin R. Toapanta5, Marcelo B. Sztein5, Miriam K. Laufer5, Kirsten E. Lyke5, Cristiana Cairo7.
 
-Winter Okoth, Daniela Franco (assisted with thawing)
+1Molecular Microbiology and Immunology Graduate Program, University of Maryland School of Medicine, Baltimore, MD, United States
 
-Franklin R. Toapanta, Marcelo B. Sztein, Miriam Laufer, Kirsten E. Lyke, Cristiana Cairo
+2Flow Cytometry Shared Resource, University of Maryland Greenebaum Comprehensive Cancer Center, Baltimore, MD, United States
+
+3Blantyre Malaria Project, Kamuzu University of Health Sciences, Blantyre, Malawi
+
+4Graduate Program in Life Sciences, University of Maryland School of Medicine, Baltimore, MD, United States
+
+5Center for Vaccine Development and Global Health, University of Maryland School of Medicine, Baltimore, MD, United States
+
+6Geographic Medicine Division, Department of Medicine, University of Maryland School of Medicine, Baltimore, MD, United States
+
+7Department of Microbiology and Immunology, University of Maryland School of Medicine, Baltimore, MD, United States
 
 
-Spectral flow cytometry (SFC) holds enormous potential to profile immune systems at both breadth and depth previously untennable/impractical/unreachable. For human neonatal immunology research, where there are only a finite number of cryopreserved specimens with variable cell counts, SFC may permit for a more thorough dissection of the observed heterogeneity in immune responses during the early life period following immunization or infection.
+Spectral flow cytometry (SFC) holds enormous potential for immune profiling in both breadth and depth. For studies of early life human immunology, where the quantity of biospecimen is limited, SFC may allow for a more thorough interrogation of immune responses following immunization or infection.
 
-For modern cytometrist, this promise of increased capacity to characterize comes at the cost of needing to account for increased uncertainty, primarily arising from how marker abundance is estimated during unmixing. Regardless of whether it is introduced by additional or varied autofluorescence, non-specific binding or tandem degradaton of fluorophores, or simply increased  unmixing-dependent spread due to co-expression of markers on rare subsets, this uncertainty actively shapes our datasets. Developing bioinformatic methods to distinguish heterogeneity from underlying technical artifacts is key to unlocking SFC's full potential. 
- 
-But beyond resolution, how to analyze the richness of SFC datasets remains a challenge. Leveraging the "forest from the trees" analogy, while gating for pre-determined cell populations of interest remains viable, we risk constraining our analyses to looking for particular species of tree. This narrow focus precludes our ability to detect meaninful changes in other cell populations within the immunological forest that is our samples. Likewise, while existing unsupervised methods permit capturing a broader picture, many are the equivalent of viewing a single satellite picture of the entire forest, with uncertainty dictating the final resolution. 
+The increased number of fluorophores does come with increased uncertainty, affecting the estimation of marker abundance during unmixing. Factors such as additional or varied autofluorescence, non-specific binding or tandem degradation of fluorophores, and increased unmixing-dependent spread due to co-expression of markers on rare subsets, introduce uncertainty when analyzing datasets. Developing systematic bioinformatic methods to distinguish heterogeneity from underlying technical artifacts is critical to the production of interpretable, accurate data using SFC.
 
-We highlight how we address these challenges in our work evaluating the immune responses of a cohort of Malawian infants with well-characterized prenatal HIV-exposure. This consisted of three groups of infants born to women with: A) ART-treated HIV infection and undetectable viral load since before conception and through pregnancy (HEU-lo); B) HIV infection diagnosed and treated at mid-gestation or later, with high viral load at enrollment (HEU-hi); C) no HIV infection (HU). 
+Additionally, analysis of complex SFC datasets remains a challenge. Manual gating of pre-determined cell populations of interest risks introducing bias by defaulting to past immunologic assumptions and by design narrows our ability to detect changes in other cell subsets. On the other hand, while existing unsupervised methods may capture a broader picture, it may be difficult to discern findings with biologic relevance.
 
-We collected cord blood mononuclear cells at birth, and peripheral blood mononuclear cells at 4 and 9-months following routine childhood immunizations. Cryopreserved samples were thawed, rested for 6 hours, before being stimulated in the presence of purified protein derrivative (PPD) or Staphylococcal enterotoxin B (SEB) for 11 hours. Cells were then processed and stained with a 32-color intranuclear SFC panel to characterize phenotype, activation-induced marker and cytokine production. Cells were acquired the same day on a 5-laser Cytek Aurora that had passed an enhanced instrument QC criteria.
+Studying a cohort of Malawian infants with well-characterized prenatal HIV-exposure, we demonstrate a systematic method of analysis suitable for rare subsets. The cohort consisted of three groups of infants born to women with: A) ART-treated HIV infection and
 
-Following acquisition, we carried out a semi-supervised analysis with a custom pipeline that we implemented in R and Rust. Briefly, we screened unmixing controls using the Luciernaga and PeacoQC R packages, replacing problematic single-colors and incorporating additional autofluoresce controls as appropiate before unmixing.
+undetectable viral load since before conception and through pregnancy (HEU-lo); B) HIV infection diagnosed and treated at mid-gestation or later, with high viral load at enrollment (HEU-hi); C) no HIV infection (HU). Cryopreserved cord blood mononuclear cells and longitudinal peripheral blood mononuclear cells collected at 4 and 9-months following routine childhood immunizations were thawed, rested for 6 hours, and stimulated in the presence of purified protein derivative (PPD) or Staphylococcal enterotoxin B (SEB). Cells were stained with a 32-color SFC panel to characterize phenotype, activation-induced markers and cytokine production with same day acquisition using a 5-laser Cytek Aurora.
 
-Samples were biexponentially transformed and automated gating for predefined cell populations was implemented using the openCyto and flowMagic R packages. Using the interactive Shiny App in our R package Coereba, split-point between positive and negative events for each given marker and individual calculated by the automated gating were visualized and manually adjusted as needed. Identity columns for the marker expression of individual cells were then generated and incorporated into the .fcs files. 
+Following acquisition, we carried out a semi-supervised analysis with a custom pipeline that we implemented in R and Rust. Briefly, we performed quality assurance of unmixing controls using the Luciernaga and PeacoQC R packages, replacing problematic single-colors and/or autofluorescence controls as appropriate before unmixing. Samples were biexponentially transformed and automated gating was implemented using the openCyto and flowMagic R packages. Using the interactive Shiny App in our R package Coereba, the calculated split-points between positive and negative events were visualized for each marker and manually adjusted as needed. Identity columns for the marker expression of individual cells were then generated and appended to the .fcs files.
 
-For particular cell populations of interest, all events were concatenated, normalized with CytoNorm v2, clustered with flowSOM, and dimensionality visualized with PaCMAP. Incorporated identify data from cells that ended up within individual islands or clusters was retrieved, allowing evaluation algorithm performance vs. manual gating. In parallel, cells enumerated into clusters on basis of shared marker identity were analyzed for differential abundance using existing Bioconductor workflows. 
-
-We leverage both approaches to examine the immune system across each timepoint,treatment condition, and where applicable, longitudinally. This permitted an exhaustive characterization that was scalable and allows for greater understanding of what occurring within the immunological forest.
+For select cell populations, all events were concatenated, normalized with CytoNorm v2, clustered with flowSOM, and visualized with PaCMAP. Identity data associated with cells across clusters was retrieved, allowing a comparison between algorithm and manual gating performance. In parallel, cells sorted into clusters on the basis of shared marker identity were analyzed to compare their abundance between exposure groups using existing Bioconductor workflows. This mixed approach allowed us to examine the immune response across timepoints, treatment conditions and exposure groups, enabling an exhaustive, comprehensive and scalable characterization of individual heterogeneity
