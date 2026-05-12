@@ -1,0 +1,47 @@
+---
+title: "Planning"
+format: html
+---
+
+Planning document for next months Semi-Supervised Pipeline Talk
+
+# Slide 1
+
+- SFC depth and breadth
+- Invaluable clinical specimens limited biospecimen
+- Potential for biological discovery rare populations
+
+# Slide 2
+- Uncertainty ~ marker abundance 
+- AF, tandem degradation, non-specific
+- marker coexpression, UDS, elephant in the room
+- distinguishing biological from technical noise admist SFC quirks
+
+# Slide 3
+- Two areas grappling while awake at 3 AM. 
+- Targetted by manual analysis constrained 
+- unsupervised methods, are we fully leveraging? really? or skimming surface?
+- are our outputs biologically relevant? does it matter? 
+
+# Slide 4
+- Our cohort, malawian infants, well characterized HIV and ART exposure
+- 0,4,9 months
+- Cryopreserved, 32-fluorophore, highly AB co-expression markers for cytokines and AIMS
+- 5-laser cytek Aurora
+
+# Slide 5
+- Pipeline started in R, increasing skeleton of Rust behind the scenes. 
+- Luciernaga, PeacoQC
+- Unmixing (whether SpectroFlo, TRU-OLS, Luciernaga, implementatable)
+- openCyto and flowMagic for automated constrained gating
+- Coereba for manual annotation
+- Norm, Dim Viz, Unsupervised, with retrievable underlying
+- Marker expression and plots
+- Summarized experiment for BioC integration
+
+# Slide 6
+- Iterative and functional programming and strong tradition of EDA to check our ass
+- Where continuum of clustering we are at, be confident about it. 
+
+# Slide 7
+- Identify freezer burned specimens otherwise would have included. 
