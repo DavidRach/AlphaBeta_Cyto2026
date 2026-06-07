@@ -33,25 +33,51 @@ At the end of the day, I want to leverage the clearest insight out of my panel. 
 
 # Slide 8
 
-We are working with a cohort of
-- Our cohort, malawian infants, well characterized HIV and ART exposure
+We are working with a cohort of malawian infants, well stratefied HIV and ART exposure.
+
+- Cryopreserved
 - 0,4,9 months
-- Cryopreserved, 32-fluorophore, highly AB co-expression markers for cytokines and AIMS
-- 5-laser cytek Aurora
+- Using a 32-fluorophore panel, intranuclear, high AB co-expression markers for cytokines and AIMs. 
+- Rested 6 hours, stimulated w PPD, SEB, w/o golgi for 3, with golgi for 9 hours. 
+- Acquired 5-laser cytek Aurora passed QC
 
-# Slide 5
-- Pipeline started in R, increasing skeleton of Rust behind the scenes. 
-- Luciernaga, PeacoQC
-- Unmixing (whether SpectroFlo, TRU-OLS, Luciernaga, implementatable)
-- openCyto and flowMagic for automated constrained gating
-- Coereba for manual annotation
-- Norm, Dim Viz, Unsupervised, with retrievable underlying
-- Marker expression and plots
-- Summarized experiment for BioC integration
+# Slide 9
+- Our analysis pipeline has evolved since our previous papers. Previously mainly FlowJo, increasingly in R, with skeleton elements of Rust taking over performance behind the scenes. However, still traditional cytometrist, so interconversion is critical. 
 
-# Slide 6
-- Iterative and functional programming and strong tradition of EDA to check our ass
-- Where continuum of clustering we are at, be confident about it. 
+- Pre-Unmixing, we are using Luciernaga to screen our unmixing control signatures. Visualizing across time, pinpoint bad controls and remove. Similar approach for which samples are getting beads vs. cells. 
 
-# Slide 7
+- Screening with PeacoQC, originally R version, but James Moyihan's Rust implementation is sweet!
+
+- Automated Gating to Cell Subsets: openCyto (mainly mindensity with a lot of gate_range arguments), but also flowMagic (both our own GatingSet implementation, but with sebastianos last update going his route). 
+
+- Using the old Cytoverse docker container to go from a GatingSet back to FlowJo v.10 workspace to allow for corrections by traditional flow cytometrist. 
+
+- Coereba: newer R packages. Main idea is on a per-cell basis defining a identity column that encompasses all the manual gated definitions for every marker interest. This then travels and can be used to cross-check assumptions for the dimensionality visualizations
+
+- Run openCyto mindensity, check, constrain. We interactively update the placements via a Shiny App. Then Coereba is run
+
+- Once column is incorporated, we can normalize. Trying CytoNorm and CyCombine, using a single-donor thaw specimen for each experiment. If anyone has suggestions, open, since so far results have been mixed. Typically applying at the cell node level rather than the whole file. 
+
+- Point, choosing to either downsample for larger pops, or concatenate entire population.
+
+- Dimensionality Viz - UMAP or PaCMAP via Python
+
+- Gate on "clusters/islands/pick-your-terminology", process of CoerebaID incorporation is reversible, and we retrieve/rederrive the proportion cells from each donor that ended up in the area that were positive or negative for each marker. 
+
+- Likewise, these outputs get incorporated into Bioconductor SummarizedExperiment object, allowing for filtering, renumeration, and passing to downstream statistical analysis packages. 
+
+- As suspected, not all dimensionality methods are separating down to pure populations when visualized. 
+
+- However, we can quickly iterate out the marker expression plots for an individual specimen. 
+
+# Slide 10
+
+- Enough to anger both sides of the automated gating vs. unsupervised clustering camps
+- Strong emphasis at the moment on exploratory data analysis. 
+- No stand at this point on where to draw the clustering continuum 
+- Individual nodes are too noisy for standard tests
+- Off-target uses are those that are fascinating, more programmatic outputs that not have in typical flow cytometry analysis
+
+# Slide 11
 - Identify freezer burned specimens otherwise would have included. 
+- Overnight staining vs. day of, differential population loss?
