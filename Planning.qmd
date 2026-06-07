@@ -3,27 +3,37 @@ title: "Planning"
 format: html
 ---
 
-Planning document for next months Semi-Supervised Pipeline Talk
 
 # Slide 1
 
-- SFC depth and breadth
-- Invaluable clinical specimens limited biospecimen
-- Potential for biological discovery rare populations
+SFC amazing, whether 20 markers or 60, ability to rapidly acquire millions of cells in minutes. expanding our understanding human immunology, potential for biologica characterization rarer subsets, particularly invaluable for clinical specimens limited biospecimen. 
 
 # Slide 2
-- Uncertainty ~ marker abundance 
-- AF, tandem degradation, non-specific
-- marker coexpression, UDS, elephant in the room
-- distinguishing biological from technical noise admist SFC quirks
+Immense potential, with elephants in the room. Uncertainty ~ marker "abundances", everything affect, tandem degradagtion, non-speicifc, af variation, coexpression. Caution in attributing to biology what could be technical artefat in these large panels. 
 
 # Slide 3
-- Two areas grappling while awake at 3 AM. 
-- Targetted by manual analysis constrained 
-- unsupervised methods, are we fully leveraging? really? or skimming surface?
-- are our outputs biologically relevant? does it matter? 
+
+While if you are interested in a single cell population, the analysis remains essentially the same, there is one area I have constantly grappled with over my PhD. Namely, if we acquired 7 million cells to characterize 100 of our rare population, what is occuring in the rest of the cells. Especially if for a rare clinical cohort. 
 
 # Slide 4
+
+Unsupervised analytical methods have often been touted as the solution, but in their current implementation, are they fully leveraging the entirety of our unique datasets? Or are they confined to skimming the surface. Similarly, we cluster, is the statistical test even biologically relavent if three distinct groups of cells ended smooshed together. And if our datasets have MFI batch effects, how reliable would they perform. 
+
+# Slide 5
+
+Because at the end of the day, when it's 3 AM, I step back. On a spectrum, our discussions about clusters and metaclusters revolve about where we draw the lines. On one end every cell is in a cluster with itself. On the other everything is in the same cluster. 
+
+# Slide 6
+
+Every panel, depending on our markers, has an ability to define cell populations that are present up to a certain point. And various groups have previous implementations of trying to corral cells of these phenotypes for biological insight. 
+
+# Slide 7
+
+At the end of the day, I want to leverage the clearest insight out of my panel. Just like I make my single-color controls each time because I don't want to spend hours after the fact trying to make things work, I don't see the point of clustering only to spend hours laboriously re-glue-ing things back together. (too much, tone it back?)
+
+# Slide 8
+
+We are working with a cohort of
 - Our cohort, malawian infants, well characterized HIV and ART exposure
 - 0,4,9 months
 - Cryopreserved, 32-fluorophore, highly AB co-expression markers for cytokines and AIMS
