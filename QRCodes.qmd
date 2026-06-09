@@ -1,0 +1,417 @@
+---
+title: "QR Codes"
+format: html
+---
+
+# Setup Code
+
+```{r}
+library(qrcode)
+```
+
+```{r}
+QR_Helper <- function(url, output, filename){
+
+code <- qr_code(url)
+
+TheFileName  <- paste0(filename, ".svg")
+
+StoreHere <- file.path(output, TheFileName)
+
+generate_svg(code, filename = StoreHere)
+#plot(code)
+}
+```
+
+# GitHub Repository
+
+# GitHub Repository
+
+[Link](https://github.com/DavidRach/FlowAwareness_Cyto2026)
+
+```{r}
+QR_Helper(url="https://github.com/DavidRach/AlphaBeta_Cyto2026",
+    output="outputs", 
+    filename="AlphaBetaRepo")
+```
+
+
+# AutoSpectral Walk-Through
+
+```{r}
+
+QR_Helper(url="https://umgcccfcsr.github.io/CytometryInR/course/community/AutoSpectral/",
+    output="outputs", 
+    filename="AutoSpectralWalkThrough")
+```
+
+# AutoSpectral GitHub
+
+```{r}
+
+QR_Helper(url="https://github.com/DrCytometer/AutoSpectral",
+    output="outputs", 
+    filename="AutoSpectralRepo")
+```
+
+# TRU-OLS Walk-Through
+
+```{r}
+
+QR_Helper(url="https://umgcccfcsr.github.io/CytometryInR/course/community/TRU-OLS/",
+    output="outputs", 
+    filename="TRU-OLS WalkThrough")
+```
+
+# TRU-OLS GitHub
+
+```{r}
+
+QR_Helper(url="https://github.com/De-Novo-Research/TRU-OLS",
+    output="outputs", 
+    filename="TRUOLSGitHub")
+```
+
+# PeacoQC
+
+```{r}
+QR_Helper(url="https://github.com/saeyslab/peacoQC",
+    output="outputs", 
+    filename="PeacoQCRepo")
+```
+
+# PeacoQC Vignette
+
+```{r}
+
+QR_Helper(url="https://www.bioconductor.org/packages/release/bioc/vignettes/PeacoQC/inst/doc/PeacoQC_Vignette.pdf",
+    output="outputs", 
+    filename="PeacoQCVignette")
+```
+
+```{r}
+QR_Helper(url="https://crates.io/crates/peacoqc-cli",
+    output="outputs", 
+    filename="RustyPeacoQC")
+```
+
+
+# FlowAI
+
+```{r}
+
+QR_Helper(url="https://github.com/giannimonaco/flowAI",
+    output="outputs", 
+    filename="FlowAIRepo")
+```
+
+# FlowAI Vignette
+
+```{r}
+
+QR_Helper(url="https://www.bioconductor.org/packages/release/bioc/vignettes/flowAI/inst/doc/flowAI.html",
+    output="outputs", 
+    filename="FlowAIVignette")
+```
+
+# flowGate
+
+```{r}
+
+QR_Helper(url="https://github.com/DavidRach/flowGate",
+    output="outputs", 
+    filename="FlowGateRepoFork")
+```
+
+# flowGate WalkThrough
+
+```{r}
+
+QR_Helper(url="https://umgcccfcsr.github.io/CytometryInR/course/08_WaysToGate/#manual---flowgate",
+    output="outputs", 
+    filename="FlowGateWalkThrough")
+```
+
+# openCyto Repo
+
+```{r}
+
+QR_Helper(url="https://github.com/RGLab/openCyto",
+    output="outputs", 
+    filename="openCytoRepo")
+```
+
+
+
+# openCyto Walkthrough
+
+```{r}
+
+QR_Helper(url="https://umgcccfcsr.github.io/CytometryInR/course/08_WaysToGate/#automated---opencyto",
+    output="outputs", 
+    filename="openCytoWalkthrough")
+```
+
+# flowMagic Repo
+
+```{r}
+
+QR_Helper(url="https://github.com/semontante/flowMagic",
+    output="outputs", 
+    filename="flowMagicRepo")
+```
+
+
+
+# flowMagic Vignette
+
+```{r}
+
+QR_Helper(url="https://github.com/semontante/flowMagic/blob/main/pk_manual/flowMagic_manual.pdf",
+    output="outputs", 
+    filename="flowMagicManual")
+```
+
+# In: FlowJo to R
+
+```{r}
+
+QR_Helper(url="https://umgcccfcsr.github.io/CytometryInR/course/05_GatingSets/#cytoml",
+    output="outputs", 
+    filename="CytoMLWalkthrough")
+```
+
+
+# Out: R to FlowJo
+
+```{r}
+
+QR_Helper(url="https://umgcccfcsr.github.io/CytometryInR/course/08_WaysToGate/GStoFlowJo.html",
+    output="outputs", 
+    filename="CytoMLOut")
+```
+
+# DataForStatsWalks
+
+```{r}
+
+QR_Helper(url="https://umgcccfcsr.github.io/CytometryInR/course/11_DataForStats/",
+    output="outputs", 
+    filename="DataForStats")
+```
+
+# Subset Export
+
+```{r}
+
+QR_Helper(url="https://umgcccfcsr.github.io/CytometryInR/course/10_Downsampling/#export",
+    output="outputs", 
+    filename="ExportBypass")
+```
+
+# GatingSets
+
+```{r}
+
+QR_Helper(url="https://umgcccfcsr.github.io/CytometryInR/course/05_GatingSets/",
+    output="outputs", 
+    filename="GatingSets")
+```
+
+# flowWorkspace
+
+```{r}
+
+QR_Helper(url="https://github.com/RGLab/flowWorkspace",
+    output="outputs", 
+    filename="flowWorkspaceRepo")
+```
+
+# CytoML repo
+
+```{r}
+
+QR_Helper(url="https://github.com/RGLab/CytoML",
+    output="outputs", 
+    filename="CytoMLrepo")
+```
+
+# Coereba Repo
+
+```{r}
+
+QR_Helper(url="https://github.com/DavidRach/Coereba",
+    output="outputs", 
+    filename="CoerebaRepo")
+```
+
+# Coereba Vignette
+
+```{r}
+
+QR_Helper(url="https://davidrach.github.io/Coereba/articles/Workflow.html",
+    output="outputs", 
+    filename="CoerebaVignette")
+```
+
+# Bioconductor SummarizedExperiment
+
+```{r}
+
+QR_Helper(url="https://www.bioconductor.org/packages/release/bioc/vignettes/SummarizedExperiment/inst/doc/SummarizedExperiment.html",
+    output="outputs", 
+    filename="SummarizedExperiment")
+```
+
+# CytoNorm Repo
+
+```{r}
+
+QR_Helper(url="https://github.com/saeyslab/cytonorm",
+    output="outputs", 
+    filename="CytoNormRepo")
+```
+
+# CytoNorm Vignette
+
+```{r}
+
+QR_Helper(url="https://github.com/saeyslab/CytoNorm/tree/master/vignettes",
+    output="outputs", 
+    filename="CytoNormVignettes")
+```
+
+# CyCombine Repo
+
+```{r}
+
+QR_Helper(url="https://github.com/biosurf/cyCombine",
+    output="outputs", 
+    filename="cyCombineRepo")
+```
+
+# CyCombine Vignette
+
+```{r}
+
+QR_Helper(url="https://biosurf.org/cyCombine",
+    output="outputs", 
+    filename="CyCombineVignettes")
+```
+
+# FlowSOM Repo
+
+```{r}
+
+QR_Helper(url="https://github.com/saeyslab/FlowSOM",
+    output="outputs", 
+    filename="FlowSOMRepo")
+```
+
+# FlowSOM Vignette
+
+```{r}
+
+QR_Helper(url="https://www.bioconductor.org/packages/release/bioc/vignettes/FlowSOM/inst/doc/FlowSOM.pdf",
+    output="outputs", 
+    filename="flowSOMVignette")
+```
+
+
+# UWOT Repo
+
+```{r}
+
+QR_Helper(url="https://github.com/jlmelville/uwot",
+    output="outputs", 
+    filename="uwotRepo")
+```
+
+# PaCMAP Repo
+
+```{r}
+
+QR_Helper(url="https://github.com/YingfanWang/PaCMAP",
+    output="outputs", 
+    filename="PaCMAPRepo")
+```
+
+# Luciernaga UMAP and PACMAP
+
+```{r}
+
+QR_Helper(url="https://davidrach.github.io/Luciernaga/articles/DimensionalityVisualization.html#utility_umap",
+    output="outputs", 
+    filename="DimensionalityWrapperLuciernaga")
+```
+
+# Luciernaga Repo
+
+```{r}
+
+QR_Helper(url="https://github.com/DavidRach/Luciernaga/",
+    output="outputs", 
+    filename="LuciernagaRepo")
+```
+
+# Luciernaga Vignette
+
+```{r}
+
+QR_Helper(url="https://davidrach.github.io/Luciernaga/articles/FluorescenceSignatures.html#luciernaga_qc",
+    output="outputs", 
+    filename="LuciernagaQCVignette")
+```
+
+# Dashboard
+
+```{r}
+
+QR_Helper(url="https://umgccfcss.github.io/InstrumentQC/",
+    output="outputs", 
+    filename="Dashboard")
+```
+
+# 5LLevey
+
+```{r}
+
+QR_Helper(url="https://umgccfcss.github.io/InstrumentQC/Aurora5L.html",
+    output="outputs", 
+    filename="5L_Levey")
+```
+
+# 5L_History
+
+```{r}
+
+QR_Helper(url="https://umgccfcss.github.io/Aurora5L/",
+    output="outputs", 
+    filename="5L_History")
+```
+
+# How to InstrumentQC
+
+# 5LLevey
+
+```{r}
+
+QR_Helper(url="https://davidrach.github.io/InstrumentQC_Install/",
+    output="outputs", 
+    filename="HowToInstrumentQC")
+```
+
+
+# CordBloodILT
+
+```{r}
+
+QR_Helper(url="https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2025.1628145/full",
+    output="outputs", 
+    filename="CordBloodILT")
+```
+
+
+
+
+
