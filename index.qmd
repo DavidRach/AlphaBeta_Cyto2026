@@ -1,4 +1,36 @@
-# Abstract
+---
+format: html
+toc: true
+toc-location: right
+toc-depth: 4
+sidebar: false
+---
+![](images/WebsiteBanner.png){width="100%"}
+
+<div style="text-align: right;">
+[![AGPL-3.0][agpl3-shield]][agpl3]
+[![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
+</div>
+
+# Slides
+
+This is the repository for our Cyto 2026 "Semi-supervised pipeline" parallel talk.  
+
+Click [here](https://davidrach.github.io/FlowAwareness_Cyto2026/Rach_SemiSupervised_Cyto2026.pdf) to navigate to the .pdf of the poster, which can be downloaded. 
+
+For our Cytometry in R course, click [here](https://umgcccfcsr.github.io/CytometryInR/course/). 
+
+For the InstrumentQC dashboard how-to website, click [here](https://davidrach.github.io/InstrumentQC_Install/)
+
+Click [here](https://github.com/DavidRach/Luciernaga) for information about the Luciernaga R package. 
+
+For information about our Coereba R package, click [here](https://github.com/DavidRach/Coereba)
+
+# GitHub repository organization. 
+
+Within this GitHub repository due to size limits, we are unable to provide the .svg files that were used to create the poster in [Inkscape](https://inkscape.org/), feel free to reach out to the UMGCCC Flow Cytometry Shared Resource email ("flowcore", "@", "som.umaryland.edu") to get a sharable copy. 
+
+The code to generate QR codes and extract survey comments in R can be found under the code_poster folder. Actual QR codes generated can be found under outputs folder. Images used that were brought in from other sources can be found in the images folder. 
 
 # Abstract
 
@@ -22,27 +54,26 @@ Following acquisition, we carried out a semi-supervised analysis with a custom p
 
 For select cell populations, all events were concatenated, normalized with CytoNorm v2, clustered with flowSOM, and visualized with PaCMAP. Identity data associated with cells across clusters was retrieved, allowing a comparison between algorithm and manual gating performance. In parallel, cells sorted into clusters on the basis of shared marker identity were analyzed to compare their abundance between exposure groups using existing Bioconductor workflows. This mixed approach allowed us to examine the immune response across timepoints, treatment conditions and exposure groups, enabling an exhaustive, comprehensive and scalable characterization of individual heterogeneity
 
-# Slides
-
-This is the repository for our Cyto 2026 "Semi-supervised pipeline" parallel talk.  
-
-Click [here](https://davidrach.github.io/FlowAwareness_Cyto2026/Rach_SemiSupervised_Cyto2026.pdf) to navigate to the .pdf of the poster, which can be downloaded. 
-
-For our Cytometry in R course, click [here](https://umgcccfcsr.github.io/CytometryInR/course/). 
-
-For the InstrumentQC dashboard how-to website, click [here](https://davidrach.github.io/InstrumentQC_Install/)
-
-Click [here](https://github.com/DavidRach/Luciernaga) for information about the Luciernaga R package. 
-
-For information about our Coereba R package, click [here](https://github.com/DavidRach/Coereba)
-
-
-# GitHub Repository organization. 
-
-Within this GitHub repository due to size limits, we are unable to provide the .svg files that were used to create the poster in [Inkscape](https://inkscape.org/), feel free to reach out to the UMGCCC Flow Cytometry Shared Resource email ("flowcore", "@", "som.umaryland.edu") to get a sharable copy. 
-
-The code to generate QR codes and extract survey comments in R can be found under the code_poster folder. Actual QR codes generated can be found under outputs folder. Images used that were brought in from other sources can be found in the images folder. 
-
 # License
 
 In our commitment to open-science and open-source, all teaching materials are freely offered under a [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/deed.en) license, while all code examples are offered under the [AGPL3-0](https://www.gnu.org/licenses/agpl-3.0.en.html) copyleft license. 
+
+<br>
+<br>
+
+<div style="text-align: right;">
+[![AGPL-3.0][agpl3-image]][agpl3]
+[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
+</div>
+
+[agpl3-shield]: https://img.shields.io/badge/license-AGPLv3-blue
+[cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
+
+[cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
+[cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
+
+[agpl3-image]: https://www.gnu.org/graphics/agplv3-with-text-162x68.png
+[agpl3]: https://www.gnu.org/licenses/agpl-3.0.en.html
+
+
+
