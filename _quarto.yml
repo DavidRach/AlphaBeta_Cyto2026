@@ -11,6 +11,7 @@ website:
     position: below-navbar 
   page-navigation: true 
   title: "David Rach"
+  site-path: "/AlphaBeta_Cyto2026/"
   navbar:
     logo: images/hex.svg
     background: white

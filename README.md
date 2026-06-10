@@ -26,7 +26,7 @@ For select cell populations, all events were concatenated, normalized with CytoN
 
 This is the repository for our Cyto 2026 "Semi-supervised pipeline" parallel talk.  
 
-Click [here](https://davidrach.github.io/AlphaBeta_Cyto2026/Rach_SemiSupervised_Cyto2026.pdf) to navigate to the .pdf of the poster, which can be downloaded. 
+Click [here](Rach_SemiSupervised_Cyto2026.pdf) to navigate to the .pdf of the poster, which can be downloaded. 
 
 For our Cytometry in R course, click [here](https://umgcccfcsr.github.io/CytometryInR/course/). 
 
