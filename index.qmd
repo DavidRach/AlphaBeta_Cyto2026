@@ -31,7 +31,7 @@ Following acquisition, we carried out a semi-supervised analysis with a custom p
 For select cell populations, all events were concatenated, normalized with CytoNorm v2, clustered with flowSOM, and visualized with PaCMAP. Identity data associated with cells across clusters was retrieved, allowing a comparison between algorithm and manual gating performance. In parallel, cells sorted into clusters on the basis of shared marker identity were analyzed to compare their abundance between exposure groups using existing Bioconductor workflows. This mixed approach allowed us to examine the immune response across timepoints, treatment conditions and exposure groups, enabling an exhaustive, comprehensive and scalable characterization of individual heterogeneity. 
 
 [Code](https://github.com/DavidRach/AlphaBeta_Cyto2026) 
-[Slides](https://davidrach.github.io/AlphaBeta_Cyto2026/Rach_SemiSupervised_Cyto2026.pdf) 
+[Slides](/Rach_SemiSupervised_Cyto2026.pdf) 
 [Recording](https://youtu.be/yvcdKR1QbIo?si=EHcP34Vi5cueK7E2)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/yvcdKR1QbIo?si=2dfbgYgewYBzXms1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
